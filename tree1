@@ -1,0 +1,65 @@
+class Node:
+
+    def __init__(self, value):
+
+        self.left = None
+        self.right = None
+        self.value = value
+        #adds the atribute value to node
+
+
+    def addChild(self,value):
+
+        #if value is less than node, add data in left subtree
+        if self.value:
+            if value < self.value:
+                #check if it has value
+                if self.left is None:
+                    #if it is empty, recursive add old
+                    self.left = Node(value)
+                else :
+            #already has value        #recursive, own subtree add itself will just work out
+                  self.left.addChild(value)
+             #if value is greater than add in right subtree
+            elif value > self.value:
+                if self.right is None:
+                    #is empty, adds new
+                    self.right = Node(value)
+                else :
+                #already has value #recursive, own subtree add itself will just work out
+                    self.right.addChild(value)
+        else:
+            self.value = value
+
+
+    def inOrderTraversal(self):
+        if self.left:
+            self.left.inOrderTraversal()
+        print( self.value)
+        if self.right:
+            self.right.inOrderTraversal()
+
+    def postOrderTraversal(self):
+        if self.right:
+            self.right.postOrderTraversal()
+        print(self.value)
+        if self.left:
+            self.left.postOrderTraversal()
+
+    def treeOrder():
+
+
+
+
+root = Node("+")
+root.addChild("-")
+treeOrder = str((100-))
+#all of these addChild to the tree
+root.addChild("10")
+root.addChild("100")
+root.addChild("x")
+root.addChild("7")
+root.addChild("")
+
+
+root.inOrderTraversal()
